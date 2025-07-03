@@ -26,5 +26,25 @@ void main() {
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
-  });
+
+  });  
+}
+
+class MiBotonPersonalizado extends StatelessWidget {
+  final String texto;
+  final VoidCallback onPressed;
+
+  const MiBotonPersonalizado({
+    Key? key,
+    required this.texto,
+    required this.onPressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: Text(texto),
+    );
+  }
 }
